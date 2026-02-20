@@ -47,10 +47,8 @@ function calculateContributionRatio(
   const weightedRatio = incomeRatio * 0.6 + houseworkRatio * 0.4;
 
   // 日本の家事審判実務では通常40:60〜60:40の範囲に制限
-  // 極端な偏りを防ぐためにクランプ処理
   const MIN_RATIO = 40;
   const MAX_RATIO = 60;
-  const clampedRatio = Math.max(MIN_RATIO, Math.min(MAX_RATIO, weightedRatio));
 
   // 50からの偏差を縮小（例：偏差10→有効偏差5程度）
   // これにより収入差が大きくても穏やかな調整になる
